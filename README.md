@@ -1,8 +1,3 @@
-# Conda Packaging Template
+# Packaging Recipe for Django-more-admin-filters
 
-This template repository contains a default setup for building new conda packages via agithub action.
-
-## Contents
-
-1. A github action to build conda packages and upload them for MacOS-X, Linux, Windows 74bit pythons v 3/6-3.9
-2. A build environment
+Django-more-admin-filters is a collection of django admin filters with a focus on filters using dropdown widgets, multiple choice filters and filters working with annotated attributes.
