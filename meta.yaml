@@ -1,0 +1,41 @@
+{% set name = "django-more-admin-filters" %}
+{% set version = "1.8" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_more_admin_filters-{{ version }}.tar.gz
+  sha256: fc4d3a3bf0367763a887dceca4b469e467ad062a9e8da1c29b6d6137c5b0e3cd
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - django >=2.2,<6.0
+
+test:
+  imports:
+    - more_admin_filters
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/thomst/django-more-admin-filters
+  summary: Additional filters for django-admin.
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
